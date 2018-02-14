@@ -1,0 +1,24 @@
+
+Sub insrt()
+
+Dim img As String
+'img = Range("D3").Value
+'img = Cells(3, "D")
+img = ActiveCell.Value
+
+'MsgBox img
+
+ActiveSheet.Pictures.Insert("C:\Users\bsamitha\Desktop\macro_img\" + img + ".png").Select
+
+With Selection
+
+.Left = Cells(ActiveCell.Row, 1).Left
+.Top = Cells(ActiveCell.Row, 1).Top
+
+.ShapeRange.LockAspectRatio = msoFalse
+.ShapeRange.Height = 50#
+.ShapeRange.Width = 40#
+
+End With
+
+End Sub
